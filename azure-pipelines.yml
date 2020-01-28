@@ -161,7 +161,7 @@ stages:
               deployType: 'DacpacTask'
               deploymentAction: 'Publish'
               dacpacFile: '$(Pipeline.Workspace)/dropDacpac/Tailspin.SpaceGame.Database/bin/Debug/Tailspin.SpaceGame.Database.dacpac'
-              ipDetectionMethod: 'AutoDetect' 
+              ipDetectionMethod: 'AutoDetect'
 
 - stage: 'Dev'
   displayName: 'Deploy to the dev environment'
