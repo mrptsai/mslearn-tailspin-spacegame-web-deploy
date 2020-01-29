@@ -3,7 +3,7 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
-  dotnetSdkVersion: '3.1.100'
+  dotnetSdkVersion: '3.1.100' 
 
 stages:
 - stage: 'Build'
@@ -58,7 +58,7 @@ stages:
       displayName: 'Publish the project - $(buildConfiguration)'
       inputs:
         command: 'publish'
-        projects: '$(System.DefaultWorkingDirectory)/**/Tailspin.SpaceGame.Web.csproj' 
+        projects: '$(System.DefaultWorkingDirectory)/**/Tailspin.SpaceGame.Web.csproj'  
         publishWebProjects: false
         arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
@@ -135,7 +135,7 @@ stages:
         command: 'test'
         arguments: '--no-build --configuration $(buildConfiguration)'
         publishTestResults: true
-        projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
+        projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj' 
 
 - stage: 'Staging'
   displayName: 'Deploy to the staging environment'
